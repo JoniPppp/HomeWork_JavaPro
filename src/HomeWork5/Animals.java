@@ -3,35 +3,29 @@ package HomeWork5;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Animals {
+public class Animals implements Running, Swimming{
     String name;
-    AnimalsTypes animalType;
     static List<Observer> subscribers = new ArrayList<>();
+
 
     public Animals() {
     }
 
-    public Animals(String name, AnimalsTypes animalType) {
+    public Animals(String name) {
         this.name = name;
-        this.animalType = animalType;
-    }
-
-    enum AnimalsTypes {
-        CAT, DOG;
     }
 
 
-    public Animals createAnimal(AnimalsTypes animalType, String name) {
+    public Animals addCat(String name) {
         Animals res = null;
-        switch (animalType){
-            case CAT:
-                res = new Cat(name, animalType);
-                break;
-            case DOG:
-                res = new Dog(name, animalType);
-                break;
-        }
-        notifyObservers(res.animalType);
+        res = new Cat(name);
+        notifyObservers(res);
+        return res;
+    }
+    public Animals addDog(String name) {
+        Animals res = null;
+        res = new Dog(name);
+        notifyObservers(res);
         return res;
     }
 
@@ -42,16 +36,18 @@ public class Animals {
     public void removeObserver(Observer observer) {
         Animals.subscribers.remove(observer);
     }
-    public void notifyObservers(AnimalsTypes animalType) {
+    public void notifyObservers(Animals animal) {
         for (Observer observer: subscribers){
-            observer.addAnimal(animalType);
+            observer.addAnimal(animal);
         }
     }
+
+    @Override
     public void run(double path) {
 
     }
 
-
+    @Override
     public void swim(double path) {
 
     }
