@@ -1,5 +1,6 @@
 package HomeWork5;
+
 @FunctionalInterface
 public interface Running {
-        void run(double path);
+    void run(double path);
 }

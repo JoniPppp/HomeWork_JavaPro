@@ -1,10 +1,10 @@
 package HomeWork5;
 
-public class Cat extends Animals{
-    final double runMaxDistance = 200.0;
-    final double swimMaxDistance = 0.0;
+public class Cat extends Animal implements Swimming, Running {
     public Cat(String name) {
-        super(name);
+        this.name = name;
+        this.runMaxDistance = 200.0;
+        this.swimMaxDistance = 0.0;
     }
 
     public void run(double path) {
@@ -23,4 +23,5 @@ public class Cat extends Animals{
         else
             System.out.println("Кіт " + this.name + " не вміє плавати тому варто його рятувати.");
     }
+
 }
