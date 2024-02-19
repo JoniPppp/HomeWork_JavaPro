@@ -6,9 +6,13 @@ public class AnimalsObserver implements Observer {
     private int animalsCount = 0;
 
     @Override
-    public void recalcAnimalsCount(Animal animal) {
-        if (animal instanceof Cat) catsCount++;
-        if (animal instanceof Dog) dogsCount++;
+    public void recalcCatsCount(Cat cat) {
+        catsCount++;
+        animalsCount++;
+    }
+    @Override
+    public void recalcDogsCount(Dog dog) {
+        dogsCount++;
         animalsCount++;
     }
 

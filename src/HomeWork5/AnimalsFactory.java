@@ -12,13 +12,13 @@ public class AnimalsFactory {
 
     public Cat addCat(String name) {
         Cat res = new Cat(name);
-        notifyObservers(res);
+        notifyObserversCat(res);
         return res;
     }
 
     public Dog addDog(String name) {
         Dog res = new Dog(name);
-        notifyObservers(res);
+        notifyObserversDog(res);
         return res;
     }
 
@@ -30,9 +30,14 @@ public class AnimalsFactory {
         AnimalsFactory.subscribers.remove(observer);
     }
 
-    public void notifyObservers(Animal animal) {
+    public void notifyObserversCat(Cat cat) {
         for (Observer observer : subscribers) {
-            observer.recalcAnimalsCount(animal);
+            observer.recalcCatsCount(cat);
+        }
+    }
+    public void notifyObserversDog(Dog dog) {
+        for (Observer observer : subscribers) {
+            observer.recalcDogsCount(dog);
         }
     }
 
