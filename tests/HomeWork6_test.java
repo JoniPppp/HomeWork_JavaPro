@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class HomeWork6_test {
+class HomeWork6_test {
     FiguresList figuresList = new FiguresList();
     private double radius = 5;
     private double side = 5;

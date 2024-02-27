@@ -14,7 +14,7 @@ public class Racetrack implements Barrier {
     public void overcome(Participant participant) {
         participant.run(this);
     }
-
+    @Override
     public String getBarrierType() {
         return "бігова доріжка";
     }

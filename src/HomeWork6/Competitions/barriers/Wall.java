@@ -14,7 +14,7 @@ public class Wall implements Barrier {
     public void overcome(Participant participant) {
         participant.jump(this);
     }
-
+    @Override
     public String getBarrierType() {
         return "стіна";
     }
