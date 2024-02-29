@@ -28,7 +28,7 @@ public class Main {
         for (Barrier i : barriers) {
             for (Participant j : participants) {
                 if (j.getIsParticipant())
-                    i.overcome(j);
+                    j.overcome(i);
             }
         }
     }

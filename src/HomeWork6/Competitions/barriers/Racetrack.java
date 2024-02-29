@@ -1,7 +1,6 @@
 package HomeWork6.Competitions.barriers;
 
 import HomeWork6.Competitions.Barrier;
-import HomeWork6.Competitions.Participant;
 
 public class Racetrack implements Barrier {
     private final float length;
@@ -10,10 +9,6 @@ public class Racetrack implements Barrier {
         this.length = length;
     }
 
-    @Override
-    public void overcome(Participant participant) {
-        participant.run(this);
-    }
     @Override
     public String getBarrierType() {
         return "бігова доріжка";

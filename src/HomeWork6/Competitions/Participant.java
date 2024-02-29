@@ -26,10 +26,7 @@ public abstract class Participant {
                     " не пройшов перешкоду " + racetrack.getBarrierType() + " на дистанції " +
                     racetrack.getLength() + ". Пройдено " + this.getMaxRunDistance());
             this.setIsParticipant(false);
-        }
-
-
-        else
+        } else
             System.out.println("Учасник " + this.participantType.toLowerCase() + " " + this.participantName +
                     " пройшов перешкоду " + racetrack.getBarrierType() + " на дистанції " +
                     racetrack.getLength());
@@ -46,13 +43,18 @@ public abstract class Participant {
                     " не пройшов перешкоду " + wall.getBarrierType() + " на дистанції " +
                     wall.getHeight() + ". Пройдено " + this.getMaxJumpHeight());
             this.setIsParticipant(false);
-        }
-
-        else
+        } else
             System.out.println("Учасник " + this.participantType.toLowerCase() + " " + this.participantName +
                     " пройшов перешкоду " + wall.getBarrierType() + " на дистанції " +
                     wall.getHeight());
         System.out.println();
+    }
+    public void overcome(Barrier barrier) {
+        if (barrier instanceof Racetrack)
+            this.run((Racetrack) barrier);
+
+        else
+            this.jump((Wall) barrier);
     }
 
     public float getMaxJumpHeight() {
